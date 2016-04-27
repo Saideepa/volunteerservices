@@ -1,0 +1,45 @@
+	
+<link href="../css/bs_leftnavi.css" rel="stylesheet">
+<script src="../js/bs_leftnavi.js"> </script>
+
+<div class="container-fluid">  
+<div class="outerframe" >       
+	<div class="col-sm-2" >
+	
+		<div id="gw-sidebar" class="gw-sidebar"> 
+			
+			<ul class="gw-nav gw-nav-list">		
+				<li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">General</span> <b class="gw-arrow"></b> </a>
+					<ul class="gw-submenu">
+						<li> <a id="events" href="" ng-click="createEvent()">Events</a> </li>
+						<li> <a id="tasks" href="" ng-click="createTasks()">Tasks</a> </li>
+						<li> <a id="location" href="" ng-click="createLocation()">Location</a> </li>
+					</ul>
+				</li>
+				<li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">Search Forms</span> <b class="gw-arrow icon-arrow-up8"></b> </a>
+					<ul class="gw-submenu">
+						<li> <a ng-click="createEvents()" href="#">Events</a> </li>
+						<li> <a id="volunteersearch" href="#">Volunteers</a> </li>
+						<li> <a id="locationsearch" href="#">Location</a> </li>
+					</ul>
+				</li>
+				<li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">Preferences</span> <b></b> </a>
+					<ul class="gw-submenu">
+						<li> <a id="chngepwd" href="#">Change Password</a> </li>
+						<li> <a id="volunteerlogin" href="#">Volunteer Login</a> </li>
+						<li> <a id="logout" href="#">Logout</a> </li>
+					</ul>
+				</li>
+			</ul>	   
+		</div>
+	</div>
+	
+	<div class="col-sm-10"> 
+		<div class="formframe">	
+			<div ui-view="detail"></div>
+		</div>
+	</div>
+</div>	
+</div>
+
+

@@ -1,0 +1,359 @@
+/*!
+ * Start Bootstrap - Landing Page Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+	
+}
+html,
+body {
+    line-height: 1;
+    color: #FFFFFF;
+    background-color: #f0f6f8;
+}
+HTML, BODY {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+	
+    }
+
+
+.new_head {
+	height: 5px;
+	width: 100%;
+	background-color: #589fce;
+}
+
+
+BODY {
+    color: #000;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.5em;
+    background: White;
+    }
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 500;    
+}
+
+.topnav {
+    animation:font-size: 14px; 
+	font-family: "Georgia", sans-serif;
+	color: #FFFFF1;
+	background-color: #596393;
+}
+
+.topnavlabel {
+	font-family: "Gabriola";
+	color: #FFFFF1;
+	font-size: 36px;	
+}
+
+.lead {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.intro-header {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 50px;
+    text-align: center;
+    color: #FFFFFF;
+    background-size: cover;
+}
+
+.intro-message {
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+@media(max-width:767px) {
+    .intro-message {
+        padding-bottom: 15%;
+    }
+
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+
+    ul.intro-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.intro-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+
+    .intro-divider {
+        width: 100%;
+    }
+}
+
+.network-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+.content-section-b {
+    padding: 80px 0 400px;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+	background-color: #E1E1ED;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+
+
+.banner {
+	position:fixed;
+	left:0px;
+	bottom: 30px;
+    height:120px;
+    width:100%;    
+    color: #F6FFCC;
+	background-color: #545D8A;
+}
+.bannertoprow{
+	position:fixed;
+	left:0px;
+	bottom: 150px;
+    height:10px;
+    width:100%;    
+    color: #F6FFCC;
+	background-color: #400040;
+}
+.banner h2 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 3em;
+}
+.banner ul {
+    margin-bottom: 0;
+	font-size: 3em;
+	color: #000;
+}
+.banner-social-buttons {
+    float: right;
+    margin-top: 0;
+}
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        float: left;
+        margin-top: 15px;
+    }
+}
+@media(max-width:767px) {
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
+
+    ul.banner-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+}
+p.copyright {
+    margin: 15px 0 0;
+}
+
+.addBorder {
+   width: 260px;
+   border-style: double;
+   border-width: thick;
+   border-color:#004080;
+}
+
+.formframe{
+   width: 100%;
+   height: 680px;
+    border: 1px solid black;
+   border-style: single;
+   border-width: 1px;
+   border-color:#004080;
+
+}
+.eventtable{
+  width: 950px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  background-color: #FFFFF1;
+  border-style: solid;
+  border-width: 1px;
+  border-color:#004080;
+}
+
+.contentBorder{
+ width: 850px;
+ height: 460px;
+    border: 1px solid black;
+}
+
+.eventRow {
+  font-family: "Source Sans Pro";
+  color: #75004C;
+  font-weight: bold;
+  font-size: 24px;	
+  margin-right: 0px;
+  margin-left: 0px;
+  padding: 5px 0;
+  background-color: #BCBCBC;
+    border-style: solid;
+  border-width: 1px;
+}
+
+.ftrblack {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background-color:#242225;
+   	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+}
+
+.outerframe{
+   position:fixed;
+   right:10px;
+   top:60px;
+   height:100%;
+   width:100%;
+}
+
+.homeselectlabel {
+	font-family: "Gabriola";
+	color: #000065;
+	font-size: 28px;	
+	float:right;
+	font-weight: bold;
+	padding: 8px;
+	padding-right: 7px;
+}
+
+.mdtablabel{
+  font-weight: bold;
+  color: #370040;  
+}
+
+.color-green {
+  color: green;
+}
+
+.color-blue {
+  color: blue;
+}
+
+.color-red {
+  color: red;
+}
+
+/*Fieldset*/
+
+
+legend{
+position:variable;
+	font-size:15px;
+	font-weight:bold;
+	border:1px solid #a1a1a1;
+	top:80px;
+	padding:10px;
+	background:#ffffff;
+}
+/*End Fieldset*/
+
+/*Input types*/
+input:focus{ 
+	border: 2px solid #29b8e5; 
+	width:300px;
+	-webkit-transition: width 300ms linear;
+    -moz-transition: width 300ms linear;
+    -o-transition: width 300ms linear;
+    transition: width 300ms linear;
+}
+textarea:focus{
+	border: 2px solid #29b8e5;
+	height:80px;
+	-webkit-transition: height 300ms linear;
+    -moz-transition: height 300ms linear;
+    -o-transition: height 300ms linear;
+    transition: height 300ms linear;
+}
+/*End Input Types*/
+
+/*Input label*/
+label{ 
+	width:150px; 
+	display: inline-block; 
+}
+/*End input label*/

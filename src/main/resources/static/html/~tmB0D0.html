@@ -1,0 +1,136 @@
+<html>
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.css" 		rel="stylesheet">
+    <link href="../css/angular-material.min.css"rel="stylesheet" >
+    <!-- Custom CSS -->
+	<link href="../css/landing-page.css"		rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+	
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap-tooltip.js"></script>
+	<script src="../js/bootstrap-popover.js"></script>
+    <script src="../js/angular.min.js"></script>
+	<script src="../js/angular-ui-router.min.js"></script>	
+    <script src="../js/angular-animate.min.js"></script>
+    <script src="../js/angular-aria.min.js"></script>
+    <script src="../js/angular-messages.min.js"></script>
+	<script src="../js/angular-material.min.js"></script>
+	
+	<script src="../js/homeController.js"></script>
+	<body ccID="1145">
+
+<form ccID="1155">
+
+    <a ccID="1169" name="about"></a>
+    <div ccID="1195" class="content-section-b">
+      <div ccID="1234" class="container">	           
+	    <div ccID="1276" class="col-sm-10" ng-controller="eventController">
+		  <div ccID="1337"  ng-controller="ListLocController" class="row">
+		    <div ccID="1397" class="col-sm-8">
+			  <p ccID="1426">
+			  <div ccID="1436" class="col-sm-2">
+				<label ccID="1464" class="homeselectlabel" for="mySelect" >Location: </label>
+				</div>
+				<div ccID="1547" class="col-sm-4">
+				<select ccID="1575" class="form-control" 
+				name="mySelect" 
+				id="mySelect" 
+				ng-options="option.name for option in data.availableOptions track by option.id"
+				ng-model="data.selectedOption"
+				ng-change="getStuff(data.selectedOption)"> 					
+				</select>
+			  </p>
+			  </div>
+		    </div>
+		  </div>
+          <div ccID="1898" class="row"> <br ccID="1916">
+			<div ccID="1925" class="eventRow">&nbsp; &nbsp; &nbsp;  Events</div>	
+				<div ccID="1988" class="eventtable">	
+				  <md-content ccID="2021" flex layout="column">
+					<md-tabs ccID="2061" md-stretch-tabs="always" md-dynamic-height="true"  md-border-bottom>
+					  <md-tab ccID="2147" ng-repeat="tab in tabs" md-selected="tab" md-on-select="selectTab(tab)" label="{{tab}}">
+
+						  <div ccID="2255"> 
+							  <ul ccID="2272"> 
+								  <li ccID="2289" ng-repeat="event in events"> 
+								  Event Starts From: {{ event.startDateTime }}  To {{ event.endDateTime }} </br>
+								  {{ event.eventName }}  </br>
+								  {{ event.description }} <br ccID="2488"></br>
+								  </li> <br ccID="2515">
+							  </ul>
+						  
+						  </div>
+						  	  
+					  </md-tab>
+					</md-tabs>        
+				  </md-content>				
+
+			  	</div>
+			</div>
+		  </div>
+		<a ccID="2685"  name="login"></a>
+</br></br></br>
+		<div ccID="2727" class="col-sm-2" ng-controller="loginController"> 
+			<div ccID="2787" class="addBorder">	
+				<md-input-container ccID="2817" flex>
+					<label ccID="2849">Email-ID</label>
+					<input ccID="2879" ng-model="email" type="text"/>
+				</md-input-container>
+				
+				<md-input-container ccID="2955" flex>
+					<label ccID="2987">Password</label>
+					<input ccID="3017" ng-model="password" type="password"/>
+				</md-input-container>				
+				<div ccID="3098" align="center" >
+					<button ccID="3126" type="submit" id="login" ng-click="submit()" class="btn">Login</button> &nbsp;&nbsp;
+					<button ccID="3225" type="submit" id="login" ng-click="submit()" class="btn">Register</button><br ccID="3307"/>  <br ccID="3314"/>  
+				</div>
+			</div>
+		</div>				
+
+      </div>
+      <!-- /.container -->
+  </div>
+  <!-- /.intro-header -->
+
+
+<a ccID="3445"  name="contact"></a>
+  <div ccID="3472" class="bannertoprow"></div>
+    <div ccID="3510" class="banner">
+        <div ccID="3540" class="container">
+            <div ccID="3577" class="row">
+			  <div ccID="3601" class="col-sm-1"></div></br>
+                <div ccID="3652" class="col-sm-5">
+                    <h2 ccID="3696">Guru Virtues, Inc.</h2>
+					<p ccID="3730" class="col-sm-5"> </p> 
+					<p ccID="3763"> Rainmakers in cloud computing</p></br>
+					<p ccID="3812" class="lead"> 2 Bridgeview Circle, Unit 5, <br ccID="3858"> Tyngsboro, MA 01879 <br ccID="3883"> www.guruvirtues.com</p>
+					
+                </div>
+                <div ccID="3960" class="col-sm-6">
+                    <ul ccID="4004" class="list-inline banner-social-buttons">
+                        <li ccID="4076">
+                            <a ccID="4110" href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i ccID="4182" class="fa fa-twitter fa-fw"></i> <span ccID="4218" class="network-name">Twitter</span></a>
+                        </li>
+                        <li ccID="4320">
+                            <a ccID="4354" href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i ccID="4445" class="fa fa-github fa-fw"></i> <span ccID="4480" class="network-name">Github</span></a>
+                        </li>
+                        <li ccID="4581">
+                            <a ccID="4615" href="#" class="btn btn-default btn-lg"><i ccID="4658" class="fa fa-linkedin fa-fw"></i> <span ccID="4695" class="network-name">Linkedin</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+
+    </div>
+
+</form>
+</body>
+</html>

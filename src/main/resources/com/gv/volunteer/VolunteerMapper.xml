@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gv.volunteer.dao.VolunteerDao">
+   
+    <select id="findUserByEmailId" resultType="com.gv.volunteer.model.LoginResponse" parameterType="com.gv.volunteer.model.Login">
+       <!-- select count(*) from public.users" where "EmailID" = #{loginId} and  "Password"= #{password} -->
+        SELECT u.email_id as "loginId", u.password as "password",ur.rolename as "role"
+  		FROM public.users as u,public.userrole as ur 
+  		WHERE u.email_id = ur.email_id 
+  		      AND u.email_id=#{loginId}
+  			  AND u.password=#{password}
+    </select>  
+    
+    <select id="listAllLocations" resultType="com.gv.volunteer.model.LocationLookUp">
+       <!-- SELECT location_id, location_name, state FROM public.location; -->
+		SELECT location_id as "id", location_name || ', ' || state as "name"
+  		FROM public.location   		
+    </select> 
+
+	   <parameterMap id="paramMap" type="java.util.Map">
+              <parameter property="locId" javaType="Long" />
+       </parameterMap>
+
+    <select id="ListAllEvents" resultType="com.gv.volunteer.model.ListAllEvents" parameterMap="paramMap">      
+		SELECT event_startdatetime as "startDateTime", event_enddatetime as "endDateTime",  event_name as "eventName", description 
+		FROM public.event as e
+		WHERE e.event_startdatetime > now()::date - 365 
+		AND e.location = #{locId}   		
+    </select>    
+    
+    <select id="ListAllWeeklyEvents" resultType="com.gv.volunteer.model.ListAllEvents" parameterMap="paramMap">      
+		SELECT event_startdatetime as "startDateTime", event_enddatetime as "endDateTime",  event_name as "eventName", description 
+		FROM public.event as e
+		WHERE event_startdatetime BETWEEN
+    		NOW()::DATE-EXTRACT(DOW from NOW())::INTEGER
+    	AND NOW()::DATE-EXTRACT(DOW FROM NOW())::INTEGER+7 
+		AND e.location = #{locId}   		
+    </select> 
+    
+    <select id="ListAllMonthlyEvents" resultType="com.gv.volunteer.model.ListAllEvents" parameterMap="paramMap">      
+		SELECT event_startdatetime as "startDateTime", event_enddatetime as "endDateTime",  event_name as "eventName", description 
+		FROM public.event as e
+		WHERE event_startdatetime BETWEEN
+    		NOW()::DATE-EXTRACT(DOW from NOW())::INTEGER
+    	AND NOW()::DATE-EXTRACT(DOW FROM NOW())::INTEGER+30
+		and e.location = #{locId}   		
+    </select>
+    
+  <!--  <insert id="InsertNewEvent" parameterType="com.gv.volunteer.model.Event" resultClass="int" >
+	    INSERT INTO public.event ( event_name, location, hostname, co_host1, co_host2, description, event_startdatetime, event_enddatetime)
+ 		VALUES (#{eventName},#{location},#{hostname},#{co_host1},#{co_host2},#{desc},#{sdatetime},#{edatetime}) 
+ 		RETURNING event_id
+	</insert>  -->
+    
+    <insert id="InsertNewEvent" parameterType="com.gv.volunteer.model.Event">
+	  <selectKey order="AFTER" keyProperty="eventId" resultType="integer">
+	    SELECT currval(pg_get_serial_sequence('public.event','event_id'));
+	  </selectKey>
+ 	  INSERT INTO public.event ( event_name, location, hostname, co_host1, co_host2, description, event_startdatetime, event_enddatetime)
+ 		VALUES (#{eventName},#{location},#{hostname},#{co_host1},#{co_host2},#{desc},#{sdatetime},#{edatetime}) 
+	</insert>    
+
+</mapper>
+

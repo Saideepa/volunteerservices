@@ -1,0 +1,140 @@
+<form>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnavlabel" href="#"> Voluntary Management</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+				    <li>
+                        <a href="#login">Login</a>
+                    </li>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="content-section-b">
+      <div class="container">	           
+	    <div class="col-sm-9" ng-controller="eventController">
+		  <div class="row">
+		    <div ng-controller="ListLocController" class="col-sm-3">
+			  <p>
+				<label class="control-label" for="mySelect" >Location: </label>
+				<select class="form-control" 
+				name="mySelect" 
+				id="mySelect" 
+				ng-options="option.name for option in data.availableOptions track by option.id"
+				ng-model="data.selectedOption"
+				ng-change="getStuff(data.selectedOption)"> 					
+				</select>
+			  </p>
+		    </div>
+		  </div>
+          <div class="row"> <br>
+			<div class="eventRow">&nbsp; &nbsp; &nbsp;  Events</div>	
+				<div>	
+				  <md-content flex layout="column">
+					<md-tabs md-stretch-tabs="always" md-dynamic-height="true" md-border-bottom>
+					  <md-tab ng-repeat="tab in tabs" md-on-select="selectTab(tab)" label="{{tab}}">
+					  
+						  <div> 
+							  <ul> 
+								  <li ng-repeat="event in events"> 
+								  Event Starts From: {{ event.startDateTime }}  To {{ event.endDateTime }} </br>
+								  {{ event.eventName }}  </br>
+								  {{ event.description }} <br></br>
+								  </li> <br>
+							  </ul>
+						  
+						  </div>		  
+					  </md-tab>
+					</md-tabs>        
+				  </md-content>				
+
+			  	</div>
+			</div>
+		  </div>
+		<a  name="login"></a>
+		<div class="col-sm-3" ng-controller="loginController"> 
+			<div class="addBorder">	
+				<md-input-container flex>
+					<label>Email-ID</label>
+					<input ng-model="email" type="text"/>
+				</md-input-container>
+				
+				<md-input-container flex>
+					<label>Password</label>
+					<input ng-model="password" type="password"/>
+				</md-input-container>				
+				<div align="center" >
+					<button type="submit" id="login" ng-click="submit()" class="btn">Login</button> &nbsp;&nbsp;
+					<button type="submit" id="login" ng-click="submit()" class="btn">Register</button><br/>  <br/>  
+				</div>
+			</div>
+		</div>				
+
+      </div>
+      <!-- /.container -->
+  </div>
+  <!-- /.intro-header -->
+
+
+	<a  name="contact"></a>
+		<div class="eventRow"></div>
+    <div class="banner">
+
+        <div class="container">
+		
+            <div class="row">
+			  <div class="col-sm-1"></div>
+			  
+                <div class="col-sm-5">
+                    <h2>Guru Virtues, Inc.</h2><br>
+					<p class="col-sm-5"> </p> 
+					<p> Rainmakers in cloud computing</p>
+					<p class="lead"> 2 Bridgeview Circle, Unit 5, <br> Tyngsboro, MA 01879 <br> www.guruvirtues.com</p>
+					
+                </div>
+                <div class="col-sm-6">
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+	<div class="eventRow"></div>
+</form>
+

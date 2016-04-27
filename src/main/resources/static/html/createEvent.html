@@ -1,0 +1,78 @@
+
+  <legend>Creating an Event</legend></br>
+  <form class="form-horizontal">
+</br>
+    <div class="form-group" ng-controller="loginController">
+      <label class="control-label col-sm-3" >Event Name:</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" ng-model="event.eventName" id="ename" placeholder="Enter event name" name autofocus required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-3" >Description:</label>
+      <div class="col-sm-6">
+        <textarea class="form-control" ng-model="event.desc" id="desc" placeholder="Enter event description" >  </textarea>
+      </div>
+    </div>	
+    <div class="form-group">	
+      <label class="control-label col-sm-3" >Start Date & Time:</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" ng-model="event.sdatetime" id="sdatetime" placeholder="Enter event start date and time" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-3" >End Date & Time:</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" ng-model="event.edatetime" id="edatetime" placeholder="Enter event end date and time" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-3" >Location:</label>
+      <div class="col-sm-3" ng-controller="ListLocController">          
+		<select class="form-control" 
+			name="mySelect" 
+			id="mySelect" 
+			ng-options="option.name for option in data.availableOptions track by option.id"
+			ng-model="data.selectedOption"
+			ng-change="getlocation(data.selectedOption)"> 					
+		</select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-3" >Host Name:</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" ng-model="event.hostname" id="hostname" placeholder="Enter hostname" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-3" >Co-Hosts:</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" ng-model="event.co_host1" id="co_host1" placeholder="Enter co-hostname 1">
+      </div>
+	  <div class="col-sm-3">
+        <input type="text" class="form-control" ng-model="event.co_host2" id="co_host2" placeholder="Enter co-hostname 2">
+      </div>
+    </div>	</br> </br> </br> </br> 
+	<div class="col-sm-offset-2 col-sm-6" align="center" >
+		<button type="submit" id="cancel" ng-click="submit()" class="btn">Cancel</button> &nbsp;&nbsp;
+		<button type="submit" id="addtask" ng-click="submit()" class="btn">Add Tasks</button> &nbsp;&nbsp;
+		<button type="submit" id="create" ng-click="createEvent(event)" class="btn">Create</button><br/>  <br/>  
+	</div>      
+
+  </form>
+<script type="text/javascript">
+    $(function () {
+        $('#sdatetime').datetimepicker();
+        $('#edatetime').datetimepicker({
+            useCurrent: false 
+        });
+        $("#sdatetime").on("dp.change", function (e) {
+            $('#edatetime').data("DateTimePicker").minDate(e.date);
+        });
+        $("#edatetime").on("dp.change", function (e) {
+            $('#sdatetime').data("DateTimePicker").maxDate(e.date);
+        });
+    });
+</script>  
+
+
